@@ -1,0 +1,45 @@
+﻿
+
+@model DAL.ViewModels.SpecieVM
+
+@{
+    ViewData["Title"] = "Create Specie";
+}
+
+<h1>@SharedLocalizer["Create Specie"]</h1>
+
+
+
+<hr />
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-md-2"> @SharedLocalizer["Company Name"]:</label>
+            <div class="col-md-10">
+                <select asp-for="CompanyID" class="form-control" asp-items="ViewBag.Companies"></select>
+                <span asp-validation-for="CompanyID" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2"> @SharedLocalizer["Specie Name"]:</label>
+            <div class="col-md-10">
+                <input asp-for="SpecieName" class="form-control" />
+                <span asp-validation-for="SpecieName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2"> @SharedLocalizer["Notes"]:</label>
+            <div class="col-md-10">
+                <input asp-for="SpecieNode" class="form-control" />
+                <span asp-validation-for="SpecieNode" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10 col-md-offset-2">
+                <input type="submit" value="@SharedLocalizer["Create"]" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">@SharedLocalizer["Back to List"]</a>
+            </div>
+        </div>
+    </div>
+</form>

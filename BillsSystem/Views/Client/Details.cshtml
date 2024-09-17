@@ -1,0 +1,35 @@
+﻿@model DAL.ViewModels.ClientVM
+
+@{
+    ViewData["Title"] = "Client Details";
+}
+
+<h1>Client Details</h1>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            Name
+        </dt>
+        <dd class="col-sm-9">
+            @Model.ClientName
+        </dd>
+        <dt class="col-sm-3">
+            Phone
+        </dt>
+        <dd class="col-sm-9">
+            @Model.Phone
+        </dd>
+        <dt class="col-sm-3">
+            Address
+        </dt>
+        <dd class="col-sm-9">
+            @Model.Address
+        </dd>
+    </dl>
+    <a asp-action="Edit" asp-route-id="@Model.ClientId" class="btn btn-warning">Edit</a>
+
+    <a class="btn btn-primary" href="@Url.Action("Index")">Back to List</a>
+</div>

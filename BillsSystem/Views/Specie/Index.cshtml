@@ -1,0 +1,46 @@
+﻿
+
+@using DAL.ViewModels
+@model List<SpecieVM>
+
+@{
+    ViewData["Title"] = "Species List";
+}
+
+<h1>@SharedLocalizer["Species List"]</h1>
+
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">@SharedLocalizer["Create New Specie"]</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @SharedLocalizer["Specie Name"]
+            </th>
+            <th>
+                @SharedLocalizer["Company Name"]
+            </th>h></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var specie in Model)
+        {
+            <tr>
+                <td>
+                    @specie.SpecieName
+                </td>
+                <td>
+                    @specie.CompanyName
+                 </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@specie.SpecieId" class="btn btn-warning">@SharedLocalizer["Edit"]</a>
+                    <a asp-action="Details" asp-route-id="@specie.SpecieId" class="btn btn-info">@SharedLocalizer["Details"]</a>
+                    <a asp-action="Delete" asp-route-id="@specie.SpecieId" class="btn btn-danger">@SharedLocalizer["Delete"]</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

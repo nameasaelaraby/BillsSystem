@@ -1,0 +1,41 @@
+﻿@model IEnumerable<DAL.ViewModels.SelesReportVM>
+
+@{
+    ViewData["Title"] = "Sales Reports";
+}
+
+<h1>@SharedLocalizer["Sales Reports"]</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">@SharedLocalizer["Create New Report"]</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>@SharedLocalizer["SelesReportName"]</th>
+            <th>@SharedLocalizer["BillNumber"]</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+           
+
+            <tr>
+
+                <td>@item.SelesReportName</td>
+                <td>@item.BillNumber</td>
+                <td>
+                <td>
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.SelesReportID">@SharedLocalizer["Details"]</a>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.SelesReportID">@SharedLocalizer["Edit"]</a>
+                    <a asp-action="Delete" asp-route-id="@item.SelesReportID" class="btn btn-danger">@SharedLocalizer["Delete"]</a>
+                </td>
+               
+            </tr>
+        }
+    </tbody>
+</table>

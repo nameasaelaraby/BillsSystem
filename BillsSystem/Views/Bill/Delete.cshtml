@@ -1,0 +1,41 @@
+﻿@model DAL.ViewModels.BillVM
+
+@{
+    ViewData["Title"] = "Delete Confirmation";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3>Are you sure you want to delete this item?</h3>
+<div>
+    <h4>Bills Details</h4>
+    <hr />
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-md-2">Bills Date</label>
+            <div class="col-md-10">
+                <p class="form-control-static">@Model.BillDate.ToShortDateString()</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Bill Number</label>
+            <div class="col-md-10">
+                <p class="form-control-static">@Model.BillNumber</p>
+            </div>
+        </div>
+
+        <!-- Similar fields as in Details.cshtml, for display only -->
+
+        <div class="form-group">
+            <div class="col-md-10 col-md-offset-2">
+                <form asp-action="DeleteConfirmed" method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" asp-for="BillNumber" />
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

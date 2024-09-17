@@ -1,0 +1,86 @@
+﻿@model DAL.ViewModels.ItemVM
+
+@{
+    ViewBag.Title = "Edit Item";
+}
+
+<h2>Edit Item</h2>
+
+<form asp-action="Edit" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-md-2">Company Name:</label>
+        <div class="col-md-10">
+            <select asp-for="CompanyID" class="form-control" asp-items="ViewBag.Companies"></select>
+            <span asp-validation-for="CompanyID" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Species Name:</label>
+        <div class="col-md-10">
+            <select asp-for="SpecieId" class="form-control" asp-items="ViewBag.Species"></select>
+            <span asp-validation-for="SpecieId" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Unit Name:</label>
+        <div class="col-md-10">
+            <input asp-for="ItemName" class="form-control" />
+            <span asp-validation-for="ItemName" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Selling Price:</label>
+        <div class="col-md-10">
+            <input asp-for="SellingPrice" class="form-control" />
+            <span asp-validation-for="SellingPrice" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Buying Price:</label>
+        <div class="col-md-10">
+            <input asp-for="BuyingPrice" class="form-control" />
+            <span asp-validation-for="BuyingPrice" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Quantity:</label>
+        <div class="col-md-10">
+            <input asp-for="Quantity" class="form-control" />
+            <span asp-validation-for="Quantity" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Discount:</label>
+        <div class="col-md-10">
+            <input asp-for="Discount" class="form-control" />
+            <span asp-validation-for="Discount" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Notes:</label>
+        <div class="col-md-10">
+            <textarea asp-for="ItemNode" class="form-control"></textarea>
+            <span asp-validation-for="ItemNode" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

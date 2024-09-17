@@ -1,0 +1,96 @@
+﻿@model DAL.ViewModels.BillVM
+
+@{
+    ViewData["Title"] = "Create Sales Invoice";
+}
+
+<h2>@SharedLocalizer["Sales Invoice"]</h2>
+
+<form asp-action="Create" method="post">
+    <fieldset>
+        <legend>@SharedLocalizer["Bills Details"]</legend>
+
+        <div class="form-group">
+            <label class="control-label"> @SharedLocalizer["BillDate"]</label>
+            <input asp-for="BillDate" class="form-control" />
+            <span asp-validation-for="BillDate" class="text-danger"></span>
+        </div>
+
+       
+
+        <div class="form-group">
+            <label class="control-label">@SharedLocalizer["ClientName"]</label>
+            <select asp-for="ClientId" class="form-control" asp-items="ViewBag.Clients"></select>
+            <span asp-validation-for="ClientId" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">@SharedLocalizer["Specie Name"]</label>
+            <select asp-for="SpecieId" class="form-control" asp-items="ViewBag.Species"></select>
+            <span asp-validation-for="SpecieId" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label  class="control-label">@SharedLocalizer["SellingPrice"]</label>
+            <input asp-for="SellingPrice" class="form-control" />
+            <span asp-validation-for="SellingPrice" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label  class="control-label">@SharedLocalizer["Quantity"]</label>
+            <input asp-for="Quantity" class="form-control" />
+            <span asp-validation-for="Quantity" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label  class="control-label">@SharedLocalizer["TotalValue"]</label>
+            <input asp-for="TotalValue" class="form-control" readonly />
+            <span asp-validation-for="TotalValue" class="text-danger"></span>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>@SharedLocalizer["Other Details"]</legend>
+
+        <div class="form-group">
+            <label  class="control-label">@SharedLocalizer["PercentageDiscount"]</label>
+            <input asp-for="PercentageDiscount" class="form-control" />
+            <span asp-validation-for="PercentageDiscount" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label  class="control-label">@SharedLocalizer["ValueDiscount"]</label>
+            <input asp-for="ValueDiscount" class="form-control" />
+            <span asp-validation-for="ValueDiscount" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label  class="control-label">@SharedLocalizer["Net"]</label>
+            <input asp-for="Net" class="form-control" readonly />
+            <span asp-validation-for="Net" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label  class="control-label">@SharedLocalizer["PaidUp"]</label>
+            <input asp-for="PaidUp" class="form-control" />
+            <span asp-validation-for="PaidUp" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label  class="control-label">@SharedLocalizer["Rest"]</label>
+            <input asp-for="Rest" class="form-control" readonly />
+            <span asp-validation-for="Rest" class="text-danger"></span>
+        </div>
+    </fieldset>
+
+    <div class="form-group">
+        <input type="submit" value=@SharedLocalizer["Save"] class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">@SharedLocalizer["Cancel"]</a>
+    </div>
+</form>
+
+@* @section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    } *@
+}

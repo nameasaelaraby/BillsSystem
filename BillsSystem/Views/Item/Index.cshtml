@@ -1,0 +1,45 @@
+﻿
+@model IEnumerable<DAL.ViewModels.ItemVM>
+
+@{
+    ViewBag.Title = "Items List";
+}
+
+<h2>@SharedLocalizer["Items List"]</h2>
+<a href="@Url.Action("Create", "Item")" class="btn btn-primary">@SharedLocalizer["Create New Item"]</a>
+
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            
+            <th>@SharedLocalizer["Item Name"]</th>
+            <th>@SharedLocalizer["Company Name"]</th>
+            <th>@SharedLocalizer["Specie Name"]</th>
+            <th>@SharedLocalizer["Selling Price"]</th>
+            <th>@SharedLocalizer["Buying Price"]</th>
+            <th>@SharedLocalizer["Actions"]</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                
+                <td>@item.ItemName</td>
+                <td>@item.CompanyID</td>
+                <td>@item.SpecieId</td>
+                <td>@item.SellingPrice</td>
+                <td>@item.BuyingPrice</td>
+                <td>
+                    <a asp-action="Details" asp-controller="Item" asp-route-id="@item.ItemId" class="btn btn-success">@SharedLocalizer["Details"]</a>
+
+                    <a asp-action="Edit" asp-controller="Item" asp-route-id="@item.ItemId" class="btn btn-warning btn-sm">@SharedLocalizer["Edit"]</a>
+
+                    <a asp-action="Delete" asp-controller="Item" asp-route-id="@item.ItemId" class="btn btn-danger btn-sm">@SharedLocalizer["Delete"]</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

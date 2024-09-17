@@ -1,0 +1,57 @@
+﻿
+@model DAL.ViewModels.ItemVM
+
+@{
+    ViewBag.Title = "Create Item";
+}
+
+<h2>@SharedLocalizer["Create Item"]</h2>
+
+
+<form asp-action="Create" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label for="CompanyID" class="control-label">@SharedLocalizer["Company Name"]:</label>
+        <select asp-for="CompanyID" class="form-control" asp-items="ViewBag.Companies"></select>
+        <span asp-validation-for="CompanyID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="TypeId" class="control-label">@SharedLocalizer["Species Name"]:</label>
+        <select asp-for="SpecieId" class="form-control" asp-items="ViewBag.Species"></select>
+        <span asp-validation-for="SpecieId" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label for="ItemName" class="control-label">@SharedLocalizer["Unit Name"]:</label>
+        <input asp-for="ItemName" class="form-control" />
+        <span asp-validation-for="ItemName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="SellingPrice" class="control-label">@SharedLocalizer["Selling Price"]:</label>
+        <input asp-for="SellingPrice" class="form-control" />
+        <span asp-validation-for="SellingPrice" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="BuyingPrice" class="control-label">@SharedLocalizer["Buying Price"]:</label>
+        <input asp-for="BuyingPrice" class="form-control" />
+        <span asp-validation-for="BuyingPrice" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="ItemNode" class="control-label">@SharedLocalizer["Notes"]:</label>
+        <textarea asp-for="ItemNode" class="form-control"></textarea>
+        <span asp-validation-for="ItemNode" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">@SharedLocalizer["Create"]</button>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

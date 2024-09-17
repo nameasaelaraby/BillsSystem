@@ -1,0 +1,36 @@
+﻿
+
+@model DAL.ViewModels.SpecieVM
+
+@{
+    ViewData["Title"] = "Delete Specie";
+}
+
+<h1>@SharedLocalizer["Delete Specie"]</h1>
+
+
+
+<div>
+   
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @SharedLocalizer["Specie Name"]
+        </dt>
+        <dd class="col-sm-10">
+            @Model?.SpecieName
+        </dd>
+        <dt class="col-sm-2">
+            @SharedLocalizer["Company Name"]
+        </dt>
+        <dd class="col-sm-10">
+            @(Model?.Company != null ? Model.Company.CompanyName : "No Company")
+        </dd>
+    </dl>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="SpecieId" />
+    <button type="submit" class="btn btn-danger">@SharedLocalizer["Delete"]</button>
+    <a asp-action="Index" class="btn btn-secondary">@SharedLocalizer["Cancel"]</a>
+</form>

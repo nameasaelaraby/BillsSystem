@@ -1,0 +1,88 @@
+﻿@model DAL.ViewModels.ItemVM
+
+@{
+    ViewBag.Title = "Item Details";
+}
+
+<h2>Item Details</h2>
+
+<div class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-md-2">Item ID:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.ItemId</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Item Name:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.ItemName</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Company Name:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.CompanyID</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Species Name:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.SpecieId</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Selling Price:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.SellingPrice</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Buying Price:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.BuyingPrice</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Quantity:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.Quantity</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Discount:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.Discount</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Total Value:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.TotalValue</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Notes:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.ItemNode</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <a asp-action="Edit" asp-route-id="@Model.ItemId" class="btn btn-warning">Edit</a>
+           
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+
+        </div>
+    </div>
+</div>

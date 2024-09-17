@@ -1,0 +1,52 @@
+﻿@{
+    var Culture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+}
+
+
+@model DAL.ViewModels.UnitVM
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@SharedLocalizer["Unit Details"]</h1>
+
+@if (Culture == "ar-EG")
+{
+    <a asp-controller="Unit" asp-action="Details" asp-route-culture="en-US" class="btn btn-primary btn-lg">
+        <i class="material-icons"></i> English
+    </a>
+}
+else
+{
+
+    <a asp-controller="Unit" asp-action="Details" asp-route-culture="ar-EG" class="btn btn-primary btn-lg">
+        <i class="material-icons"></i> بالعربية
+    </a>
+}
+<div>
+   
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UnitID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UnitID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UnitName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UnitName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UnitNote)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UnitNote)
+        </dd>
+    </dl>
+    <a asp-action="Edit" asp-route-id="@Model.UnitID" class="btn btn-primary">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>

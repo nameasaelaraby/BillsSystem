@@ -1,0 +1,191 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj" />
+    <ProjectReference Include="..\DAL\DAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\admin.js" />
+    <None Include="wwwroot\js\app-sidebar.js" />
+    <None Include="wwwroot\js\chartist.js" />
+    <None Include="wwwroot\js\chartjs.js" />
+    <None Include="wwwroot\js\chat.js" />
+    <None Include="wwwroot\js\coming-soon.js" />
+    <None Include="wwwroot\js\components-modal.min.js" />
+    <None Include="wwwroot\js\customizer.js" />
+    <None Include="wwwroot\js\dashboard-analytics.js" />
+    <None Include="wwwroot\js\dashboard-ecommerce.js" />
+    <None Include="wwwroot\js\data-tables\datatable-advanced.js" />
+    <None Include="wwwroot\js\data-tables\datatable-api.js" />
+    <None Include="wwwroot\js\data-tables\datatable-basic.js" />
+    <None Include="wwwroot\js\data-tables\datatable-styling.js" />
+    <None Include="wwwroot\js\data-tables\datatables-sources.js" />
+    <None Include="wwwroot\js\demo.js" />
+    <None Include="wwwroot\js\draggable.js" />
+    <None Include="wwwroot\js\dropzone.js" />
+    <None Include="wwwroot\js\form-typeahead.js" />
+    <None Include="wwwroot\js\form-validation.js" />
+    <None Include="wwwroot\js\fullcalendar.js" />
+    <None Include="wwwroot\js\helpers.js" />
+    <None Include="wwwroot\js\horizontal-timeline.min.js" />
+    <None Include="wwwroot\js\maps.js" />
+    <None Include="wwwroot\js\notification-sidebar.js" />
+    <None Include="wwwroot\js\pages\cards\basic.js" />
+    <None Include="wwwroot\js\pages\cards\colored.js" />
+    <None Include="wwwroot\js\pages\charts\chartjs.js" />
+    <None Include="wwwroot\js\pages\charts\flot.js" />
+    <None Include="wwwroot\js\pages\charts\jquery-knob.js" />
+    <None Include="wwwroot\js\pages\charts\morris.js" />
+    <None Include="wwwroot\js\pages\charts\sparkline.js" />
+    <None Include="wwwroot\js\pages\examples\forgot-password.js" />
+    <None Include="wwwroot\js\pages\examples\sign-in.js" />
+    <None Include="wwwroot\js\pages\examples\sign-up.js" />
+    <None Include="wwwroot\js\pages\forms\advanced-form-elements.js" />
+    <None Include="wwwroot\js\pages\forms\basic-form-elements.js" />
+    <None Include="wwwroot\js\pages\forms\editors.js" />
+    <None Include="wwwroot\js\pages\forms\form-validation.js" />
+    <None Include="wwwroot\js\pages\forms\form-wizard.js" />
+    <None Include="wwwroot\js\pages\index.js" />
+    <None Include="wwwroot\js\pages\maps\google.js" />
+    <None Include="wwwroot\js\pages\maps\jvectormap.js" />
+    <None Include="wwwroot\js\pages\medias\image-gallery.js" />
+    <None Include="wwwroot\js\pages\tables\editable-table.js" />
+    <None Include="wwwroot\js\pages\tables\jquery-datatable.js" />
+    <None Include="wwwroot\js\pages\ui\animations.js" />
+    <None Include="wwwroot\js\pages\ui\dialogs.js" />
+    <None Include="wwwroot\js\pages\ui\modals.js" />
+    <None Include="wwwroot\js\pages\ui\notifications.js" />
+    <None Include="wwwroot\js\pages\ui\range-sliders.js" />
+    <None Include="wwwroot\js\pages\ui\sortable-nestable.js" />
+    <None Include="wwwroot\js\pages\ui\tooltips-popovers.js" />
+    <None Include="wwwroot\js\pages\widgets\infobox\infobox-1.js" />
+    <None Include="wwwroot\js\pages\widgets\infobox\infobox-2.js" />
+    <None Include="wwwroot\js\pages\widgets\infobox\infobox-3.js" />
+    <None Include="wwwroot\js\pages\widgets\infobox\infobox-4.js" />
+    <None Include="wwwroot\js\pages\widgets\infobox\infobox-5.js" />
+    <None Include="wwwroot\js\pick-a-datetime.js" />
+    <None Include="wwwroot\js\popover.js" />
+    <None Include="wwwroot\js\quill.min.js" />
+    <None Include="wwwroot\js\rating.js" />
+    <None Include="wwwroot\js\script.js" />
+    <None Include="wwwroot\js\sweet-alerts.js" />
+    <None Include="wwwroot\js\switch.min.js" />
+    <None Include="wwwroot\js\tagging.js" />
+    <None Include="wwwroot\js\taskboard.js" />
+    <None Include="wwwroot\js\toastr.min.js" />
+    <None Include="wwwroot\js\tooltip.js" />
+    <None Include="wwwroot\js\tour.min.js" />
+    <None Include="wwwroot\js\wizard-steps.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\LICENSE" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\LICENSE.md" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
+    <None Include="wwwroot\vendors\css\fonts\KaTeX_Main-Regular.woff2" />
+    <None Include="wwwroot\vendors\css\fonts\KaTeX_Math-Italic.woff2" />
+    <None Include="wwwroot\vendors\css\raty\fonts\raty.svg" />
+    <None Include="wwwroot\vendors\js\chart.min.js" />
+    <None Include="wwwroot\vendors\js\chartist.min.js" />
+    <None Include="wwwroot\vendors\js\core\bootstrap.min.js" />
+    <None Include="wwwroot\vendors\js\core\jquery-3.3.1.min.js" />
+    <None Include="wwwroot\vendors\js\core\popper.min.js" />
+    <None Include="wwwroot\vendors\js\datatable\buttons.flash.min.js" />
+    <None Include="wwwroot\vendors\js\datatable\buttons.html5.min.js" />
+    <None Include="wwwroot\vendors\js\datatable\buttons.print.min.js" />
+    <None Include="wwwroot\vendors\js\datatable\dataTables.buttons.min.js" />
+    <None Include="wwwroot\vendors\js\datatable\datatables.min.js" />
+    <None Include="wwwroot\vendors\js\datatable\dataTables.responsive.min.js" />
+    <None Include="wwwroot\vendors\js\datatable\jszip.min.js" />
+    <None Include="wwwroot\vendors\js\datatable\pdfmake.min.js" />
+    <None Include="wwwroot\vendors\js\datatable\vfs_fonts.js" />
+    <None Include="wwwroot\vendors\js\dragula.min.js" />
+    <None Include="wwwroot\vendors\js\dropzone.min.js" />
+    <None Include="wwwroot\vendors\js\fullcalendar.min.js" />
+    <None Include="wwwroot\vendors\js\gmaps.min.js" />
+    <None Include="wwwroot\vendors\js\highlight.min.js" />
+    <None Include="wwwroot\vendors\js\hopscotch.min.js" />
+    <None Include="wwwroot\vendors\js\jqBootstrapValidation.js" />
+    <None Include="wwwroot\vendors\js\jquery-ui.min.js" />
+    <None Include="wwwroot\vendors\js\jquery.countdown.min.js" />
+    <None Include="wwwroot\vendors\js\jquery.matchHeight-min.js" />
+    <None Include="wwwroot\vendors\js\jquery.raty.js" />
+    <None Include="wwwroot\vendors\js\jquery.steps.min.js" />
+    <None Include="wwwroot\vendors\js\jquery.validate.min.js" />
+    <None Include="wwwroot\vendors\js\katex.min.js" />
+    <None Include="wwwroot\vendors\js\moment.min.js" />
+    <None Include="wwwroot\vendors\js\pace\pace.min.js" />
+    <None Include="wwwroot\vendors\js\perfect-scrollbar.jquery.min.js" />
+    <None Include="wwwroot\vendors\js\pickadate\legacy.js" />
+    <None Include="wwwroot\vendors\js\pickadate\picker.date.js" />
+    <None Include="wwwroot\vendors\js\pickadate\picker.js" />
+    <None Include="wwwroot\vendors\js\pickadate\picker.time.js" />
+    <None Include="wwwroot\vendors\js\prism.min.js" />
+    <None Include="wwwroot\vendors\js\quill.min.js" />
+    <None Include="wwwroot\vendors\js\screenfull.min.js" />
+    <None Include="wwwroot\vendors\js\sweetalert2.min.js" />
+    <None Include="wwwroot\vendors\js\switchery.min.js" />
+    <None Include="wwwroot\vendors\js\tagging.min.js" />
+    <None Include="wwwroot\vendors\js\toastr.min.js" />
+    <None Include="wwwroot\vendors\js\typeahead\bloodhound.min.js" />
+    <None Include="wwwroot\vendors\js\typeahead\handlebars.js" />
+    <None Include="wwwroot\vendors\js\typeahead\typeahead.bundle.min.js" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,111 @@
+﻿@model DAL.ViewModels.BillVM
+
+@{
+    ViewData["Title"] = "Bill Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>Bill Details</h4>
+    <hr />
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-md-2">Bill Date</label>
+            <div class="col-md-10">
+                <p class="form-control-static">@Model.BillDate.ToShortDateString()</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Bill Number</label>
+            <div class="col-md-10">
+                <p class="form-control-static">@Model.BillNumber</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Client ID</label>
+            <div class="col-md-10">
+                <p class="form-control-static">@Model.ClientId</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Specie ID</label>
+            <div class="col-md-10">
+                <p class="form-control-static">@Model.SpecieId</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Item ID</label>
+            <div class="col-md-10">
+                <p class="form-control-static">@Model.ItemId</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Quantity</label>
+            <div class="col-md-10">
+                <p class="form-control-static">@Model.Quantity</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Selling Price</label>
+            <div class="col-md-10">
+                <p class="form-control-static">@Model.SellingPrice.ToString("C")</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Total Value</label>
+            <div class="col-md-10">
+                <p class="form-control-static">@Model.TotalValue.ToString("C")</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Percentage Discount</label>
+            <div class="col-md-10">
+                <p class="form-control-static">@Model.PercentageDiscount %</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Value Discount</label>
+            <div class="col-md-10">
+                <p class="form-control-static">@Model.ValueDiscount.ToString("C")</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Net Amount</label>
+            <div class="col-md-10">
+                <p class="form-control-static">@Model.Net.ToString("C")</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Paid Up</label>
+            <div class="col-md-10">
+                <p class="form-control-static">@Model.PaidUp.ToString("C")</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Rest Amount</label>
+            <div class="col-md-10">
+                <p class="form-control-static">@Model.Rest.ToString("C")</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-10 col-md-offset-2">
+                <a asp-action="Edit" asp-route-id="@Model.BillNumber" class="btn btn-primary">Edit</a>
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>

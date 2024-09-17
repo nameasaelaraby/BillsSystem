@@ -1,0 +1,41 @@
+﻿
+@model IEnumerable<DAL.ViewModels.ClientVM>
+
+@{
+    ViewData["Title"] = "Clients";
+}
+
+<h1>@SharedLocalizer["Clients"]</h1>
+
+<p>
+    <a class="btn btn-primary" href="@Url.Action("Create")">@SharedLocalizer["Create New Client"]</a>
+</p>
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@SharedLocalizer["Name"]</th>
+            <th>@SharedLocalizer["Phone"]</th>
+            <th>@SharedLocalizer["Address"]</th>
+            <th>@SharedLocalizer["Actions"]</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var client in Model)
+        {
+            <tr>
+                <td>@client.ClientName</td>
+                <td>@client.Phone</td>
+                <td>@client.Address</td>
+                <td>
+                    <a class="btn btn-info" href="@Url.Action("Details", new { id = client.ClientId })">@SharedLocalizer["Details"]</a>
+                    <a class="btn btn-warning" href="@Url.Action("Edit", new { id = client.ClientId })">@SharedLocalizer["Edit"]</a>
+                    <a class="btn btn-danger" href="@Url.Action("Delete", new { id = client.ClientId })">@SharedLocalizer["Delete"]</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

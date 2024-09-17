@@ -1,0 +1,74 @@
+﻿
+
+@model IEnumerable<DAL.ViewModels.BillVM>
+
+@{
+    ViewData["Title"] = "Bills List";
+}
+
+<h2>@SharedLocalizer["Bills List"]</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">@SharedLocalizer["Create New Bill"]</a>
+</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@SharedLocalizer["BillDate"]</th>
+            <th>@SharedLocalizer["Quantity"]</th>
+            <th>@SharedLocalizer["SellingPrice"]</th>
+            <th>@SharedLocalizer["TotalValue"]</th>
+            <th>@SharedLocalizer["PercentageDiscount"]</th>
+            <th>@SharedLocalizer["ValueDiscount"]</th>
+            <th>@SharedLocalizer["Net"]</th>
+            <th>@SharedLocalizer["PaidUp"]</th>
+            <th>@SharedLocalizer["Rest"]</th>
+            <th>
+                <p>@SharedLocalizer["Action"]</p>
+            </th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BillDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SellingPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalValue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PercentageDiscount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValueDiscount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Net)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaidUp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rest)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-controller="Item" asp-route-id="@item.BillNumber" class="btn btn-success">@SharedLocalizer["Details"]</a>
+                    <a asp-action="Edit" asp-controller="Item" asp-route-id="@item.BillNumber" class="btn btn-warning btn-sm">@SharedLocalizer["Edit"]</a>
+                    <a asp-action="Delete" asp-controller="Item" asp-route-id="@item.BillNumber" class="btn btn-danger btn-sm">@SharedLocalizer["Delete"]</a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>

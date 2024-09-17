@@ -1,0 +1,34 @@
+﻿
+
+
+@model DAL.ViewModels.ClientVM
+
+@{
+    ViewData["Title"] = "Create Client";
+}
+
+<h1>@SharedLocalizer["Create Client"]</h1>
+
+
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label  class="control-label">@SharedLocalizer["ClientName"]</label>
+        <input asp-for="ClientName" class="form-control" />
+        <span asp-validation-for="ClientName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label">@SharedLocalizer["Phone"]</label>
+        <input asp-for="Phone" class="form-control" />
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label  class="control-label">@SharedLocalizer["Address"]</label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="@SharedLocalizer["Create"]" class="btn btn-primary" />
+    </div>
+</form>
+<a class="btn btn-secondary" href="@Url.Action("Index")">@SharedLocalizer["Back to List"]</a>

@@ -1,0 +1,182 @@
+﻿@{
+    var Culture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>Bills-system</title>
+    <link rel="apple-touch-icon" sizes="60x60" href="@Url.Content("~/img/ico/apple-icon-60.png")">
+    <link rel="apple-touch-icon" sizes="76x76" href="@Url.Content("~/img/ico/apple-icon-76.png")">
+    <link rel="apple-touch-icon" sizes="120x120" href="@Url.Content("~/img/ico/apple-icon-120.png")">
+    <link rel="apple-touch-icon" sizes="152x152" href="@Url.Content("~/img/ico/apple-icon-152.png")">
+    <link rel="shortcut icon" type="image/png" href="@Url.Content("~/img/logo.png")">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="@Url.Content("~/vendors/bootstrap/css/bootstrap.min.css")" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/fonts/feather/style.min.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/fonts/simple-line-icons/style.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/fonts/font-awesome/css/font-awesome.min.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/vendors/css/perfect-scrollbar.min.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/vendors/css/prism.min.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/vendors/css/chartist.min.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/app.css")">
+</head>
+<body>
+    <header>
+        <div>
+            <div data-active-color="white" data-background-color="white" class="app-sidebar">
+                <div class="sidebar-header">
+                    <div class="logo clearfix">
+                        <a asp-controller="Home" asp-action="Index" class="logo-text float-left">
+                            <div class="logo-img"><img src="~/img/logo.png" alt="" /></div>
+                            <span class="text align-middle">Bills System</span>
+                        </a>
+                        <a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"></a><a id="sidebarClose" href="javascript:;" class="nav-close d-block d-md-block d-lg-none d-xl-none">
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-active-color="white" data-background-color="white" class="app-sidebar">
+            <div class="sidebar-header">
+                <div class="logo clearfix">
+                    <a href="index.html" class="logo-text float-left">
+                        <div class="logo-img"><img src="~/app-asset/img/logo.png" alt="" /></div>
+                        <span class="text align-middle">Bills System</span>
+                    </a>
+                    <a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"></a><a id="sidebarClose" href="javascript:;" class="nav-close d-block d-md-block d-lg-none d-xl-none">
+                    </a>
+                </div>
+            </div>
+            <div class="sidebar-content">
+                <div class="nav-container">
+                    <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
+                        <li class="nav-item home">
+                            <a asp-controller="Home" asp-action="index">
+                                <i class="icon-home"></i><span data-i18n=""
+                                                               class="menu-title">Home Page </span>
+                            </a>
+                        </li>
+
+                        <li class=" nav-item">
+                            <a asp-controller="Company" asp-action="Index"><i class="icon-note"></i><span data-i18n="" class="menu-title">Company Data</span></a>
+                        </li>
+                        <li class=" nav-item">
+                            <a asp-controller="Specie" asp-action="Index">
+                                <i class="icon-pie-chart"></i><span data-i18n="" class="menu-title">
+                                    Species Data
+                                </span>
+                            </a>
+                        </li>
+                        <li class=" nav-item">
+                            <a asp-controller="Unit" asp-action="Index">
+                                <i class="icon-support"></i><span data-i18n="" class="menu-title">
+                                    All Units
+                                </span>
+                            </a>
+                        </li>
+                        <li class=" nav-item">
+                            <a asp-controller="Item" asp-action="Index">
+                                <i class="icon-layers"></i><span data-i18n=""
+                                                                 class="menu-title">Categories</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-controller="Client" asp-action="Index"><i class="icon-users"></i><span data-i18n="" class="menu-title">Clients</span></a>
+                        </li>
+                        <li class=" nav-item">
+                            <a asp-controller="Bill" asp-action="Index">
+                                <i class="icon-equalizer"></i><span data-i18n="" class="menu-title">
+                                    sales invoice
+                                </span>
+                            </a>
+                        </li>
+                        <li class=" nav-item">
+                            <a asp-controller="SelesReport" asp-action="Index">
+                                <i class="icon-puzzle"></i><span data-i18n="" class="menu-title">
+                                    Sales Report
+                                </span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar-background"></div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-faded">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" data-toggle="collapse" class="navbar-toggle d-lg-none float-left"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><span class="d-lg-none navbar-right navbar-collapse-toggle"><a class="open-navbar-container"><i class="ft-more-vertical"></i></a></span>
+                    <a id="navbar-fullscreen" href="javascript:;" class="mr-2 display-inline-block apptogglefullscreen">
+                        <i class="ft-maximize blue-grey darken-4 toggleClass"></i>
+                        <p class="d-none">fullscreen</p>
+                    </a>
+                    <a class="ml-2 display-inline-block">
+                        <i class="ft-shopping-cart blue-grey darken-4"></i>
+                        <p class="d-none">cart</p>
+                    </a>
+                    <div class="dropdown ml-2 display-inline-block">
+
+                        <div class="apps dropdown-menu">
+                            <div class="arrow_box"><a href="chat.html" class="dropdown-item py-1"><span>Chat</span></a><a href="#" class="dropdown-item py-1"><span>TaskBoard</span></a><a href="#" class="dropdown-item py-1"><span>Calendar</span></a></div>
+                        </div>
+                    </div>
+                </div>
+              
+                <li class="nav-item dropdown">
+
+                    <a href="#" class="nav-link dropdown-toggle" id="contactDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        @if (Culture == "ar-EG")
+                        {
+                            <p>عربي</p>
+                        }
+                        else
+                        {
+                            <p>English</p>
+                        }
+                        </i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" asp-route-culture="en-US" class="btn btn-primary btn-lg">English</a></li>
+                        <li><a class="dropdown-item" asp-route-culture="ar-EG" class="btn btn-primary btn-lg">عربي</a></li>
+                    </ul>
+                </li>
+            
+            </div>
+        </nav>
+    </header>
+    <div class="main-panel">
+        <div class="main-content">
+            <div>
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <script src="@Url.Content("~/vendors/js/core/jquery-3.3.1.min.js")"></script>
+    <script src="@Url.Content("~/vendors/js/core/popper.min.js")"></script>
+    <script src="@Url.Content("~/vendors/js/core/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/vendors/js/perfect-scrollbar.jquery.min.js")"></script>
+    <script src="@Url.Content("~/vendors/js/prism.min.js")"></script>
+    <script src="@Url.Content("~/vendors/js/jquery.matchHeight-min.js")"></script>
+    <script src="@Url.Content("~/vendors/js/screenfull.min.js")"></script>
+    <script src="@Url.Content("~/vendors/js/pace/pace.min.js")"></script>
+    <script src="@Url.Content("~/vendors/js/chartist.min.js")"></script>
+    <script src="@Url.Content("~/js/app-sidebar.js")"></script>
+    <script src="@Url.Content("~/js/notification-sidebar.js")"></script>
+    <script src="@Url.Content("~/js/customizer.js")"></script>
+    <script src="@Url.Content("~/js/dashboard-ecommerce.js")"></script>
+    <script src="@Url.Content("~/js/site.js")" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

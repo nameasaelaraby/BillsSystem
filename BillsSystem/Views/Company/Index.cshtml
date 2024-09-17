@@ -1,0 +1,40 @@
+﻿
+
+@model IEnumerable<DAL.ViewModels.CompanyVM>
+
+<h1>@SharedLocalizer["Companies List"]</h1>
+
+
+
+
+
+<p>
+    <a class="btn btn-primary" href="@Url.Action("Create")">@SharedLocalizer["Create New Company"]</a>
+</p>
+
+ 
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>@SharedLocalizer["Company Name"]</th>
+            <th>@SharedLocalizer["Company Note"]</th>
+            <th>@SharedLocalizer["Actions"]</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var company in Model)
+        {
+            <tr>
+                <td>@company.CompanyName</td>
+                <td>@company.CompanyNote</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@company.CompanyID" class="btn btn-primary">@SharedLocalizer["Edit"]</a>
+                    <a asp-action="Details" asp-route-id="@company.CompanyID" class="btn btn-info">@SharedLocalizer["Details"]</a>
+                    <a asp-action="Delete" asp-route-id="@company.CompanyID" class="btn btn-danger">@SharedLocalizer["Delete"]</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

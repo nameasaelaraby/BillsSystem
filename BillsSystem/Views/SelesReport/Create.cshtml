@@ -1,0 +1,31 @@
+﻿@model DAL.ViewModels.SelesReportVM
+
+@{
+    ViewData["Title"] = "Create Sales Report";
+}
+
+<h1>@SharedLocalizer["Create New Report"]</h1>
+
+<form asp-action="Create">
+
+    <div class="form-group">
+        <label class="control-label">@SharedLocalizer["BillNumber"]</label>
+        <select asp-for="BillNumber" class="form-control" asp-items="ViewBag.Bills">
+            <option value="">Select Bill</option>
+        </select>
+        <span asp-validation-for="BillNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="control-label">@SharedLocalizer["SelesReportName"]</label>
+        <input asp-for="SelesReportName" class="form-control" />
+        <span asp-validation-for="SelesReportName" class="text-danger"></span>
+    </div>
+
+   
+
+    </div>
+    <div class="form-group">
+        <input type="submit" value=@SharedLocalizer["Create"] class="btn btn-primary" />
+    </div>
+</form>
+<a class="btn btn-secondary" href="@Url.Action("Index")">@SharedLocalizer["Back to List"]</a>

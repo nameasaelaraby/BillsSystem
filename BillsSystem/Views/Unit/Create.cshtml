@@ -1,0 +1,43 @@
+﻿
+
+@model DAL.ViewModels.UnitVM
+
+@{
+    ViewData["Title"] = "Create Unit";
+}
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h4>@SharedLocalizer["Create Unit"]</h4>
+       
+
+
+
+        <div class="card-body">
+            <form asp-action="Create">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" asp-for="UnitName">@SharedLocalizer["Unit Name"]</label>
+                    <div class="col-sm-10">
+                        <input asp-for="UnitName" class="form-control" />
+                        <span asp-validation-for="UnitName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" asp-for="UnitNote">@SharedLocalizer["Unit Note"]</label>
+                    <div class="col-sm-10">
+                        <textarea asp-for="UnitNote" class="form-control"></textarea>
+                        <span asp-validation-for="UnitNote" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-sm-2">
+                        <button type="submit" class="btn btn-success">@SharedLocalizer["Save"]</button>
+                        <a href="@Url.Action("Index", "Unit")" class="btn btn-secondary">@SharedLocalizer["Cancel"]</a>
+                        <a href="/Unit/Index" class="btn btn-secondary ml-2">@SharedLocalizer["Back to List"]</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

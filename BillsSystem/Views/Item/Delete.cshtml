@@ -1,0 +1,75 @@
+﻿@model DAL.ViewModels.ItemVM
+
+@{
+    ViewBag.Title = "Delete Item";
+}
+
+<h2>Delete Confirmation</h2>
+
+<h3>Are you sure you want to delete this item?</h3>
+
+<div class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-md-2">Item ID:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.ItemId</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Item Name:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.ItemName</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Company Name:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.CompanyID</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Species Name:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.SpecieId</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Selling Price:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.SellingPrice</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Buying Price:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.BuyingPrice</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Quantity:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.Quantity</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Notes:</label>
+        <div class="col-md-10">
+            <p class="form-control-static">@Model.ItemNode</p>
+        </div>
+    </div>
+
+    <form asp-action="DeleteConfirmed" method="post">
+        <input type="hidden" asp-for="ItemId" />
+        <div class="form-group">
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
